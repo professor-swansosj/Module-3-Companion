@@ -1,0 +1,76 @@
+# HTTP Request/Response Examples in YAML format
+# This shows how HTTP transactions might be logged or configured
+
+http_examples:
+  - request:
+      method: GET
+      url: "https://icanhazdadjoke.com/"
+      headers:
+        Accept: "application/json"
+        User-Agent: "Learning-Client/1.0"
+      timestamp: "2023-10-12T15:30:45Z"
+    
+    response:
+      status_code: 200
+      status_message: "OK"
+      headers:
+        Content-Type: "application/json"
+        Content-Length: "103"
+        Server: "cloudflare"
+        Date: "Thu, 12 Oct 2023 15:30:45 GMT"
+      body:
+        id: "R7UfaahVfFd"
+        joke: "My dog used to chase people on a bike a lot. It got so bad I had to take his bike away."
+        status: 200
+      response_time_ms: 245
+  
+  - request:
+      method: GET
+      url: "https://deckofcardsapi.com/api/deck/new/shuffle/"
+      query_parameters:
+        deck_count: 1
+      headers:
+        User-Agent: "Learning-Client/1.0"
+      timestamp: "2023-10-12T15:32:10Z"
+    
+    response:
+      status_code: 200
+      status_message: "OK"
+      headers:
+        Content-Type: "application/json"
+        Content-Length: "85"
+      body:
+        success: true
+        deck_id: "3p40paa87x90"
+        shuffled: true
+        remaining: 52
+      response_time_ms: 180
+  
+  - request:
+      method: GET
+      url: "https://deckofcardsapi.com/api/deck/3p40paa87x90/draw/"
+      query_parameters:
+        count: 2
+      headers:
+        User-Agent: "Learning-Client/1.0"
+      timestamp: "2023-10-12T15:32:25Z"
+    
+    response:
+      status_code: 200
+      status_message: "OK"
+      headers:
+        Content-Type: "application/json"
+      body:
+        success: true
+        deck_id: "3p40paa87x90"
+        cards:
+          - code: "6H"
+            value: "6"
+            suit: "HEARTS"
+            image: "https://deckofcardsapi.com/static/img/6H.png"
+          - code: "9S"
+            value: "9"
+            suit: "SPADES"
+            image: "https://deckofcardsapi.com/static/img/9S.png"
+        remaining: 50
+      response_time_ms: 195

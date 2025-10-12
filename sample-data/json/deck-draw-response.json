@@ -1,0 +1,57 @@
+{
+  "success": true,
+  "deck_id": "3p40paa87x90",
+  "cards": [
+    {
+      "code": "6H",
+      "image": "https://deckofcardsapi.com/static/img/6H.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/6H.svg",
+        "png": "https://deckofcardsapi.com/static/img/6H.png"
+      },
+      "value": "6",
+      "suit": "HEARTS"
+    },
+    {
+      "code": "9S",
+      "image": "https://deckofcardsapi.com/static/img/9S.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/9S.svg",
+        "png": "https://deckofcardsapi.com/static/img/9S.png"
+      },
+      "value": "9",
+      "suit": "SPADES"
+    },
+    {
+      "code": "AS",
+      "image": "https://deckofcardsapi.com/static/img/AS.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/AS.svg",
+        "png": "https://deckofcardsapi.com/static/img/AS.png"
+      },
+      "value": "ACE",
+      "suit": "SPADES"
+    },
+    {
+      "code": "2D",
+      "image": "https://deckofcardsapi.com/static/img/2D.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/2D.svg",
+        "png": "https://deckofcardsapi.com/static/img/2D.png"
+      },
+      "value": "2",
+      "suit": "DIAMONDS"
+    },
+    {
+      "code": "KH",
+      "image": "https://deckofcardsapi.com/static/img/KH.png",
+      "images": {
+        "svg": "https://deckofcardsapi.com/static/img/KH.svg",
+        "png": "https://deckofcardsapi.com/static/img/KH.png"
+      },
+      "value": "KING",
+      "suit": "HEARTS"
+    }
+  ],
+  "remaining": 47
+}

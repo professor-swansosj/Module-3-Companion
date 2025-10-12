@@ -1,0 +1,11 @@
+card_code,value,suit,color,face_card,image_url,drawn_at
+AS,ACE,SPADES,black,true,https://deckofcardsapi.com/static/img/AS.png,2023-10-12T15:32:25Z
+6H,6,HEARTS,red,false,https://deckofcardsapi.com/static/img/6H.png,2023-10-12T15:32:25Z
+9S,9,SPADES,black,false,https://deckofcardsapi.com/static/img/9S.png,2023-10-12T15:32:40Z
+QD,QUEEN,DIAMONDS,red,true,https://deckofcardsapi.com/static/img/QD.png,2023-10-12T15:32:40Z
+2C,2,CLUBS,black,false,https://deckofcardsapi.com/static/img/2C.png,2023-10-12T15:32:40Z
+KH,KING,HEARTS,red,true,https://deckofcardsapi.com/static/img/KH.png,2023-10-12T15:32:40Z
+JC,JACK,CLUBS,black,true,https://deckofcardsapi.com/static/img/JC.png,2023-10-12T15:32:40Z
+4D,4,DIAMONDS,red,false,https://deckofcardsapi.com/static/img/4D.png,2023-10-12T15:35:10Z
+10S,10,SPADES,black,false,https://deckofcardsapi.com/static/img/0S.png,2023-10-12T15:35:10Z
+AH,ACE,HEARTS,red,true,https://deckofcardsapi.com/static/img/AH.png,2023-10-12T15:35:10Z

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "abc123",
+    "joke": "Why don't scientists trust atoms? Because they make up everything!",
+    "status": 200,
+    "retrieved_at": "2023-10-12T15:30:45Z"
+  },
+  {
+    "id": "def456", 
+    "joke": "I told my wife she was drawing her eyebrows too high. She seemed surprised.",
+    "status": 200,
+    "retrieved_at": "2023-10-12T15:31:02Z"
+  },
+  {
+    "id": "ghi789",
+    "joke": "What do you call a fake noodle? An impasta.",
+    "status": 200,
+    "retrieved_at": "2023-10-12T15:31:18Z"
+  },
+  {
+    "id": "jkl012",
+    "joke": "I used to hate facial hair, but then it grew on me.",
+    "status": 200,
+    "retrieved_at": "2023-10-12T15:31:35Z"
+  },
+  {
+    "id": "mno345",
+    "joke": "How do you organize a space party? You planet.",
+    "status": 200,
+    "retrieved_at": "2023-10-12T15:31:51Z"
+  }
+]

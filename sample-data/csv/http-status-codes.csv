@@ -1,0 +1,12 @@
+status_code,status_message,category,description,common_causes,recommended_action
+200,OK,Success,The request was successful,Valid request with proper parameters,Continue normal operation
+201,Created,Success,A new resource was successfully created,POST request created new resource,Verify the created resource
+204,No Content,Success,Request successful but no content to return,DELETE request completed,Confirm the deletion was intended
+400,Bad Request,Client Error,The request was malformed,Invalid JSON syntax or missing required fields,Check request format and required parameters
+401,Unauthorized,Client Error,Authentication is required,Missing or invalid API key/token,Provide valid authentication credentials
+403,Forbidden,Client Error,Server refuses to authorize the request,Valid credentials but insufficient permissions,Check user permissions and access rights
+404,Not Found,Client Error,The requested resource could not be found,Invalid URL or non-existent resource ID,Verify the endpoint URL and resource existence
+429,Too Many Requests,Client Error,Rate limit exceeded,Making requests too frequently,Implement rate limiting and retry logic
+500,Internal Server Error,Server Error,The server encountered an unexpected error,Database issues or application bugs,Report to API provider or retry later
+502,Bad Gateway,Server Error,Invalid response from upstream server,Gateway cannot reach backend service,Check service status or contact provider
+503,Service Unavailable,Server Error,Server temporarily unavailable,Maintenance or server overload,Wait and retry or check service status

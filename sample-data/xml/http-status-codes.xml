@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HTTP Status Codes and their meanings in XML format -->
+
+<http_status_codes>
+    <category name="Successful">
+        <status_code>
+            <code>200</code>
+            <message>OK</message>
+            <description>The request was successful</description>
+            <example_usage>Standard successful API response</example_usage>
+        </status_code>
+        <status_code>
+            <code>201</code>
+            <message>Created</message>
+            <description>A new resource was successfully created</description>
+            <example_usage>After creating a new user or record</example_usage>
+        </status_code>
+        <status_code>
+            <code>204</code>
+            <message>No Content</message>
+            <description>Request successful but no content to return</description>
+            <example_usage>After deleting a resource</example_usage>
+        </status_code>
+    </category>
+    
+    <category name="Client Errors">
+        <status_code>
+            <code>400</code>
+            <message>Bad Request</message>
+            <description>The request was malformed or missing required parameters</description>
+            <example_usage>Invalid JSON syntax or missing required fields</example_usage>
+        </status_code>
+        <status_code>
+            <code>401</code>
+            <message>Unauthorized</message>
+            <description>Authentication is required</description>
+            <example_usage>API key missing or invalid</example_usage>
+        </status_code>
+        <status_code>
+            <code>403</code>
+            <message>Forbidden</message>
+            <description>Server understood request but refuses to authorize it</description>
+            <example_usage>Valid credentials but insufficient permissions</example_usage>
+        </status_code>
+        <status_code>
+            <code>404</code>
+            <message>Not Found</message>
+            <description>The requested resource could not be found</description>
+            <example_usage>Invalid endpoint URL or resource ID</example_usage>
+        </status_code>
+        <status_code>
+            <code>429</code>
+            <message>Too Many Requests</message>
+            <description>Rate limit exceeded</description>
+            <example_usage>Making too many API calls too quickly</example_usage>
+        </status_code>
+    </category>
+    
+    <category name="Server Errors">
+        <status_code>
+            <code>500</code>
+            <message>Internal Server Error</message>
+            <description>The server encountered an unexpected error</description>
+            <example_usage>Database connection failure or code bug</example_usage>
+        </status_code>
+        <status_code>
+            <code>502</code>
+            <message>Bad Gateway</message>
+            <description>Server received invalid response from upstream server</description>
+            <example_usage>API gateway cannot reach backend service</example_usage>
+        </status_code>
+        <status_code>
+            <code>503</code>
+            <message>Service Unavailable</message>
+            <description>Server temporarily unavailable</description>
+            <example_usage>Maintenance mode or server overload</example_usage>
+        </status_code>
+    </category>
+</http_status_codes>

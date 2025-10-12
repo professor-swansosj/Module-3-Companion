@@ -1,0 +1,565 @@
+{
+  "info": {
+    "name": "Module 3 - API Learning Collection",
+    "description": "A comprehensive collection for learning API concepts with Dad Jokes API and Deck of Cards API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "12345678-1234-1234-1234-123456789abc"
+  },
+  "item": [
+    {
+      "name": "Dad Jokes API",
+      "description": "Simple API for learning basic HTTP concepts",
+      "item": [
+        {
+          "name": "Get Random Dad Joke (JSON)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": "Request JSON response format"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Learning API Client/1.0",
+                "description": "Identify our application"
+              }
+            ],
+            "url": {
+              "raw": "https://icanhazdadjoke.com/",
+              "protocol": "https",
+              "host": ["icanhazdadjoke", "com"],
+              "path": [""]
+            },
+            "description": "Fetches a random dad joke in JSON format. Great for learning about:\n- HTTP GET requests\n- Accept headers\n- JSON responses\n- Response structure"
+          },
+          "response": [
+            {
+              "name": "Successful Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "https://icanhazdadjoke.com/",
+                  "protocol": "https",
+                  "host": ["icanhazdadjoke", "com"],
+                  "path": [""]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"R7UfaahVfFd\",\n  \"joke\": \"My dog used to chase people on a bike a lot. It got so bad I had to take his bike away.\",\n  \"status\": 200\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Random Dad Joke (Plain Text)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain",
+                "description": "Request plain text response format"
+              },
+              {
+                "key": "User-Agent",
+                "value": "Learning API Client/1.0"
+              }
+            ],
+            "url": {
+              "raw": "https://icanhazdadjoke.com/",
+              "protocol": "https",
+              "host": ["icanhazdadjoke", "com"],
+              "path": [""]
+            },
+            "description": "Fetches a random dad joke in plain text format. Demonstrates content negotiation using Accept headers."
+          },
+          "response": [
+            {
+              "name": "Plain Text Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "url": {
+                  "raw": "https://icanhazdadjoke.com/",
+                  "protocol": "https",
+                  "host": ["icanhazdadjoke", "com"],
+                  "path": [""]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "I invented a new word: Plagiarism!"
+            }
+          ]
+        },
+        {
+          "name": "Get Specific Dad Joke by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://icanhazdadjoke.com/j/R7UfaahVfFd",
+              "protocol": "https",
+              "host": ["icanhazdadjoke", "com"],
+              "path": ["j", "R7UfaahVfFd"]
+            },
+            "description": "Retrieves a specific joke by its ID. Shows how to use path parameters in API requests."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Deck of Cards API",
+      "description": "Stateful API for learning about data persistence and complex workflows",
+      "item": [
+        {
+          "name": "1. Create New Shuffled Deck",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Test that the response was successful",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// Test that we received a deck_id",
+                  "pm.test(\"Response contains deck_id\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('deck_id');",
+                  "    pm.expect(jsonData.deck_id).to.be.a('string');",
+                  "});",
+                  "",
+                  "// Save the deck_id to a collection variable",
+                  "pm.test(\"Save deck_id to collection variable\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.collectionVariables.set(\"deck_id\", jsonData.deck_id);",
+                  "    console.log(\"Saved deck_id: \" + jsonData.deck_id);",
+                  "});",
+                  "",
+                  "// Test deck properties",
+                  "pm.test(\"Deck has correct properties\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.success).to.be.true;",
+                  "    pm.expect(jsonData.shuffled).to.be.true;",
+                  "    pm.expect(jsonData.remaining).to.equal(52);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1",
+              "protocol": "https",
+              "host": ["deckofcardsapi", "com"],
+              "path": ["api", "deck", "new", "shuffle", ""],
+              "query": [
+                {
+                  "key": "deck_count",
+                  "value": "1",
+                  "description": "Number of decks to create (1-52 cards each)"
+                }
+              ]
+            },
+            "description": "Creates a new shuffled deck of cards. The deck_id from this response should be saved and used in subsequent requests.\n\n**Important:** This request includes a test script that automatically saves the deck_id to a collection variable for use in other requests."
+          },
+          "response": [
+            {
+              "name": "New Deck Created",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1",
+                  "protocol": "https",
+                  "host": ["deckofcardsapi", "com"],
+                  "path": ["api", "deck", "new", "shuffle", ""],
+                  "query": [
+                    {
+                      "key": "deck_count",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"deck_id\": \"3p40paa87x90\",\n    \"shuffled\": true,\n    \"remaining\": 52\n}"
+            }
+          ]
+        },
+        {
+          "name": "2. Draw Cards from Deck",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Test successful response",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// Test response structure",
+                  "pm.test(\"Response has correct structure\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property('success');",
+                  "    pm.expect(jsonData).to.have.property('deck_id');",
+                  "    pm.expect(jsonData).to.have.property('cards');",
+                  "    pm.expect(jsonData).to.have.property('remaining');",
+                  "});",
+                  "",
+                  "// Test that we got the expected number of cards",
+                  "pm.test(\"Received correct number of cards\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.cards).to.have.lengthOf(2);",
+                  "});",
+                  "",
+                  "// Log the drawn cards",
+                  "pm.test(\"Log drawn cards\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    console.log(\"Cards drawn:\");",
+                  "    jsonData.cards.forEach(function(card, index) {",
+                  "        console.log(`${index + 1}. ${card.value} of ${card.suit} (${card.code})`);",
+                  "    });",
+                  "    console.log(`Cards remaining: ${jsonData.remaining}`);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://deckofcardsapi.com/api/deck/{{deck_id}}/draw/?count=2",
+              "protocol": "https",
+              "host": ["deckofcardsapi", "com"],
+              "path": ["api", "deck", "{{deck_id}}", "draw", ""],
+              "query": [
+                {
+                  "key": "count",
+                  "value": "2",
+                  "description": "Number of cards to draw"
+                }
+              ]
+            },
+            "description": "Draws cards from the deck created in the previous request. Uses the {{deck_id}} variable that was automatically saved.\n\n**Note:** Run the \"Create New Shuffled Deck\" request first to populate the deck_id variable."
+          },
+          "response": [
+            {
+              "name": "Cards Drawn Successfully",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://deckofcardsapi.com/api/deck/3p40paa87x90/draw/?count=2",
+                  "protocol": "https",
+                  "host": ["deckofcardsapi", "com"],
+                  "path": ["api", "deck", "3p40paa87x90", "draw", ""],
+                  "query": [
+                    {
+                      "key": "count",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"deck_id\": \"3p40paa87x90\",\n    \"cards\": [\n        {\n            \"code\": \"6H\",\n            \"image\": \"https://deckofcardsapi.com/static/img/6H.png\",\n            \"images\": {\n                \"svg\": \"https://deckofcardsapi.com/static/img/6H.svg\",\n                \"png\": \"https://deckofcardsapi.com/static/img/6H.png\"\n            },\n            \"value\": \"6\",\n            \"suit\": \"HEARTS\"\n        },\n        {\n            \"code\": \"9S\",\n            \"image\": \"https://deckofcardsapi.com/static/img/9S.png\",\n            \"images\": {\n                \"svg\": \"https://deckofcardsapi.com/static/img/9S.svg\",\n                \"png\": \"https://deckofcardsapi.com/static/img/9S.png\"\n            },\n            \"value\": \"9\",\n            \"suit\": \"SPADES\"\n        }\n    ],\n    \"remaining\": 50\n}"
+            }
+          ]
+        },
+        {
+          "name": "3. Check Deck Status",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Test successful response",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// Display deck information",
+                  "pm.test(\"Display deck status\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    console.log(`Deck ID: ${jsonData.deck_id}`);",
+                  "    console.log(`Shuffled: ${jsonData.shuffled}`);",
+                  "    console.log(`Cards Remaining: ${jsonData.remaining}`);",
+                  "    console.log(`Success: ${jsonData.success}`);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://deckofcardsapi.com/api/deck/{{deck_id}}/",
+              "protocol": "https",
+              "host": ["deckofcardsapi", "com"],
+              "path": ["api", "deck", "{{deck_id}}", ""]
+            },
+            "description": "Checks the current status of the deck without drawing any cards. Shows remaining card count and other deck properties."
+          }
+        },
+        {
+          "name": "4. Draw More Cards (5 cards)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Test successful response",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// Display drawn cards in a formatted way",
+                  "pm.test(\"Display hand of cards\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    if (jsonData.success && jsonData.cards.length > 0) {",
+                  "        console.log(\"\\n🃏 Your Hand:\");",
+                  "        console.log(\"═══════════════════════════════════════\");",
+                  "        jsonData.cards.forEach(function(card, index) {",
+                  "            let suitSymbol = getSuitSymbol(card.suit);",
+                  "            console.log(`${index + 1}. ${card.value} ${suitSymbol} (${card.code})`);",
+                  "        });",
+                  "        console.log(\"═══════════════════════════════════════\");",
+                  "        console.log(`📦 Cards remaining in deck: ${jsonData.remaining}`);",
+                  "    }",
+                  "});",
+                  "",
+                  "function getSuitSymbol(suit) {",
+                  "    switch(suit) {",
+                  "        case 'HEARTS': return '♥️';",
+                  "        case 'DIAMONDS': return '♦️';",
+                  "        case 'CLUBS': return '♣️';",
+                  "        case 'SPADES': return '♠️';",
+                  "        default: return '🂠';",
+                  "    }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://deckofcardsapi.com/api/deck/{{deck_id}}/draw/?count=5",
+              "protocol": "https",
+              "host": ["deckofcardsapi", "com"],
+              "path": ["api", "deck", "{{deck_id}}", "draw", ""],
+              "query": [
+                {
+                  "key": "count",
+                  "value": "5",
+                  "description": "Draw 5 cards (like a poker hand)"
+                }
+              ]
+            },
+            "description": "Draws 5 cards from the deck (like a poker hand). The test script formats the output nicely with card symbols."
+          }
+        },
+        {
+          "name": "5. Reshuffle Deck",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Test successful response",
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// Test that deck was reshuffled",
+                  "pm.test(\"Deck reshuffled successfully\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.success).to.be.true;",
+                  "    pm.expect(jsonData.shuffled).to.be.true;",
+                  "    pm.expect(jsonData.remaining).to.equal(52);",
+                  "    console.log(\"✅ Deck reshuffled! All 52 cards are back in the deck.\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://deckofcardsapi.com/api/deck/{{deck_id}}/shuffle/",
+              "protocol": "https",
+              "host": ["deckofcardsapi", "com"],
+              "path": ["api", "deck", "{{deck_id}}", "shuffle", ""]
+            },
+            "description": "Reshuffles all cards back into the deck. After this operation, all 52 cards will be available again."
+          }
+        },
+        {
+          "name": "6. Create Partial Deck (Face Cards Only)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "// Test successful creation",
+                  "pm.test(\"Partial deck created successfully\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.success).to.be.true;",
+                  "    pm.expect(jsonData.remaining).to.equal(12); // 3 face cards × 4 suits",
+                  "});",
+                  "",
+                  "// Save the partial deck ID",
+                  "pm.test(\"Save partial deck ID\", function () {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.collectionVariables.set(\"partial_deck_id\", jsonData.deck_id);",
+                  "    console.log(\"Partial deck created with ID: \" + jsonData.deck_id);",
+                  "    console.log(\"This deck contains only face cards (J, Q, K)\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://deckofcardsapi.com/api/deck/new/shuffle/?cards=JH,JD,JC,JS,QH,QD,QC,QS,KH,KD,KC,KS",
+              "protocol": "https",
+              "host": ["deckofcardsapi", "com"],
+              "path": ["api", "deck", "new", "shuffle", ""],
+              "query": [
+                {
+                  "key": "cards",
+                  "value": "JH,JD,JC,JS,QH,QD,QC,QS,KH,KD,KC,KS",
+                  "description": "Only face cards (Jacks, Queens, Kings) from all suits"
+                }
+              ]
+            },
+            "description": "Creates a custom deck containing only face cards (Jacks, Queens, Kings). This demonstrates how to create partial decks with specific cards."
+          }
+        },
+        {
+          "name": "7. Draw from Partial Deck",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://deckofcardsapi.com/api/deck/{{partial_deck_id}}/draw/?count=3",
+              "protocol": "https",
+              "host": ["deckofcardsapi", "com"],
+              "path": ["api", "deck", "{{partial_deck_id}}", "draw", ""],
+              "query": [
+                {
+                  "key": "count",
+                  "value": "3",
+                  "description": "Draw 3 cards from the face cards deck"
+                }
+              ]
+            },
+            "description": "Draws cards from the partial deck created in the previous request. You should only get face cards (J, Q, K)."
+          }
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// This script runs before every request in the collection",
+          "console.log('Making request to: ' + pm.request.url);",
+          "console.log('Method: ' + pm.request.method);"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// This script runs after every request in the collection",
+          "console.log('Response time: ' + pm.response.responseTime + 'ms');",
+          "console.log('Response size: ' + pm.response.responseSize + ' bytes');"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "deck_id",
+      "value": "",
+      "description": "ID of the current deck being used"
+    },
+    {
+      "key": "partial_deck_id",
+      "value": "",
+      "description": "ID of the partial deck (face cards only)"
+    }
+  ]
+}

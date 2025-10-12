@@ -1,0 +1,103 @@
+# API Configuration Example
+# This demonstrates how API configurations might be stored in YAML format
+
+dad_jokes_api:
+  name: "Dad Jokes API"
+  base_url: "https://icanhazdadjoke.com/"
+  description: "A free API for random dad jokes"
+  authentication: none
+  rate_limit: null
+  
+  endpoints:
+    - name: "Get Random Joke"
+      path: "/"
+      method: "GET"
+      headers:
+        - name: "Accept"
+          values: ["application/json", "text/plain"]
+          required: false
+          description: "Specify response format"
+        - name: "User-Agent"
+          required: false
+          description: "Identify your application"
+      
+      responses:
+        - status_code: 200
+          content_type: "application/json"
+          schema:
+            id: "string"
+            joke: "string" 
+            status: "number"
+        - status_code: 200
+          content_type: "text/plain"
+          schema: "string"
+    
+    - name: "Get Specific Joke"
+      path: "/j/{joke_id}"
+      method: "GET"
+      parameters:
+        - name: "joke_id"
+          location: "path"
+          required: true
+          type: "string"
+          description: "Unique identifier for the joke"
+
+deck_of_cards_api:
+  name: "Deck of Cards API"
+  base_url: "https://deckofcardsapi.com/api/deck/"
+  description: "API for simulating card games"
+  authentication: none
+  stateful: true
+  
+  endpoints:
+    - name: "Create New Deck"
+      path: "new/shuffle/"
+      method: "GET"
+      query_parameters:
+        - name: "deck_count"
+          type: "integer"
+          default: 1
+          description: "Number of decks to include"
+        - name: "cards"
+          type: "string"
+          required: false
+          description: "Comma-separated list of specific cards"
+      
+      response:
+        status_code: 200
+        schema:
+          success: "boolean"
+          deck_id: "string"
+          shuffled: "boolean"
+          remaining: "number"
+    
+    - name: "Draw Cards"
+      path: "{deck_id}/draw/"
+      method: "GET"
+      path_parameters:
+        - name: "deck_id"
+          type: "string"
+          required: true
+          description: "ID of the deck to draw from"
+      query_parameters:
+        - name: "count"
+          type: "integer"
+          default: 1
+          description: "Number of cards to draw"
+      
+      response:
+        status_code: 200
+        schema:
+          success: "boolean"
+          deck_id: "string"
+          cards: 
+            type: "array"
+            items:
+              code: "string"
+              value: "string"
+              suit: "string"
+              image: "string"
+              images:
+                svg: "string"
+                png: "string"
+          remaining: "number"

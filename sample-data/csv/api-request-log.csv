@@ -1,0 +1,11 @@
+timestamp,method,url,status_code,response_time_ms,content_type,success
+2023-10-12T15:30:45Z,GET,https://icanhazdadjoke.com/,200,245,application/json,true
+2023-10-12T15:31:02Z,GET,https://icanhazdadjoke.com/,200,198,application/json,true
+2023-10-12T15:31:18Z,GET,https://icanhazdadjoke.com/,200,167,application/json,true
+2023-10-12T15:32:10Z,GET,https://deckofcardsapi.com/api/deck/new/shuffle/,200,180,application/json,true
+2023-10-12T15:32:25Z,GET,https://deckofcardsapi.com/api/deck/3p40paa87x90/draw/?count=2,200,195,application/json,true
+2023-10-12T15:32:40Z,GET,https://deckofcardsapi.com/api/deck/3p40paa87x90/draw/?count=5,200,201,application/json,true
+2023-10-12T15:32:55Z,GET,https://deckofcardsapi.com/api/deck/3p40paa87x90/,200,156,application/json,true
+2023-10-12T15:33:10Z,GET,https://deckofcardsapi.com/api/deck/3p40paa87x90/shuffle/,200,178,application/json,true
+2023-10-12T15:33:25Z,GET,https://nonexistent-api.com/test,404,2500,text/html,false
+2023-10-12T15:33:40Z,GET,https://httpstat.us/500,500,1200,application/json,false
