@@ -1,6 +1,22 @@
 # Basic API Exercises
 
-These exercises will help you practice the fundamental concepts of working with APIs using cURL and the Dad Jokes API.
+Welcome to your first hands-on practice! These 10 exercises will take you from complete beginner to confidently working with APIs using cURL and the Dad Jokes API.
+
+**Before you start:**
+
+- Make sure you completed the setup in the main README
+- Have your terminal/command prompt ready
+- Don't worry if you make mistakes - that's how you learn!
+
+**How to use these exercises:**
+
+1. Read the objective and task for each exercise
+2. Follow the instructions step by step  
+3. Answer the questions to check your understanding
+4. Try the challenges to go deeper
+5. Move to the next exercise when you're comfortable
+
+Each exercise builds on the previous ones, so **don't skip ahead**!
 
 ---
 

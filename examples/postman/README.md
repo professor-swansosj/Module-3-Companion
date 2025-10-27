@@ -1,5 +1,17 @@
 # Postman Setup and Usage Instructions
 
+Welcome to Phase 3 of your API learning journey! By now you're comfortable with cURL and ready to explore the graphical world of Postman.
+
+**Why Postman?**
+
+- Visual interface makes complex requests easier
+- Built-in testing and automation capabilities  
+- Save and organize requests for reuse
+- Team collaboration features
+- Industry standard tool used by professional developers
+
+**Before you start:** Make sure you've completed the Basic and Intermediate exercises with cURL first. This knowledge will make Postman much easier to understand.
+
 This guide will help you set up and use Postman with the Module 3 API Collection.
 
 ---
