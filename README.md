@@ -2,15 +2,9 @@
 
 ## Software Defined Networking Course
 
-### Florida State College at Jacksonville
+> **Welcome to Your API Learning Journey!** This is a **companion lab** for your graded assignment. The more you practice here, the easier your graded lab will be! This repository is designed for experimentation - try things, break things, and learn from them.
 
----
-
-## 👋 Welcome to Your API Learning Journey
-
-**Important Note:** This is a **companion lab** for your graded assignment. The more you practice here, the easier your graded lab will be! This repository is designed for experimentation - try things, break things, and learn from them.
-
-### What You'll Learn (In Plain English!)
+## 🎯 What You'll Practice
 
 Think of APIs as "digital messengers" that let different computer programs talk to each other. Just like how you might call a restaurant to order food, programs use APIs to request information or services from other programs.
 
@@ -22,7 +16,7 @@ In this module, you'll learn to:
 - 📊 **Handle responses** - Work with the data that comes back
 - 🔗 **Chain operations** - Use results from one request in another
 
-### Why This Matters for Network Engineers
+## 🌟 Why This Matters for Network Engineers
 
 Modern networks aren't just cables and routers anymore. They're software-defined, automated, and programmable. APIs are how you'll:
 
@@ -31,14 +25,12 @@ Modern networks aren't just cables and routers anymore. They're software-defined
 - Integrate different network tools and systems
 - Build custom network management solutions
 
-### Prerequisites (What You Should Know)
+## 📋 Prerequisites
 
 - Basic Linux command line usage
 - Networking fundamentals (OSI model, TCP/IP)
 - How web browsers work (you've used the internet!)
 - **No programming experience required** - we'll start simple!
-
----
 
 ## 🚀 Quick Start - Make Your First API Call Right Now
 
@@ -52,9 +44,7 @@ That's it! You just made your first API call. You should see a dad joke appear i
 
 **What just happened?** You asked the Dad Jokes API for a random joke, and it sent one back to you. This is exactly how apps on your phone get weather data, social media posts, or any other information from the internet.
 
----
-
-## 📚 Your Learning Path - Follow This Order
+## � Learning Path
 
 ### Phase 1: Understanding the Basics 🌱
 
@@ -86,36 +76,32 @@ Become self-sufficient:
 1. **[🔍 Troubleshooting Guide](documentation/troubleshooting.md)** - Fix common issues
 2. **Practice Project** - Build your own API automation script
 
----
+## � Table of Contents
 
-## 📋 Complete Table of Contents
-
-### 📖 Documentation
+### Documentation
 
 - [HTTP Protocol Reference](documentation/http-reference.md) - Complete HTTP guide
 - [API Endpoints Summary](documentation/api-endpoints.md) - Quick reference for our APIs  
 - [Troubleshooting Guide](documentation/troubleshooting.md) - Solutions for common problems
 
-### 💡 Examples & Tutorials
+### Examples & Tutorials
 
 - [Basic Dad Jokes API](examples/curl/01-basic-dadjokes.md) - Simple GET requests
 - [Deck of Cards API](examples/curl/02-deck-of-cards.md) - Stateful API interactions
 - [Postman Collection](examples/postman/) - GUI-based API testing
 - [Automation Scripts](examples/scripts/) - Complete working scripts
 
-### 📝 Hands-On Exercises
+### Hands-On Exercises
 
 - [Basic Exercises](exercises/basic/README.md) - 10 fundamental exercises
 - [Intermediate Exercises](exercises/intermediate/README.md) - 12 advanced scenarios  
 - [Advanced Exercises](exercises/advanced/README.md) - Real-world projects
 
-### 📊 Sample Data
+### Sample Data
 
 - [JSON Examples](sample-data/json/) - API response examples
 - [CSV Data](sample-data/csv/) - Structured data samples
 - [YAML Configs](sample-data/yaml/) - Configuration examples
-
----
 
 ## 🗂️ Repository Structure
 
@@ -141,9 +127,7 @@ Module-3-Companion/
     └── advanced/                      # Advanced projects
 ```
 
----
-
-## �️ Setup Guide - Get Ready to Learn
+## ⚙️ Setup Guide
 
 ### Step 1: Check What You Already Have
 
@@ -209,8 +193,6 @@ curl -s -H "Accept: application/json" https://icanhazdadjoke.com/ | jq
 3. **Don't skip the basics** - they build on each other
 4. **Practice, practice, practice** - run every command yourself
 
----
-
 ## 🎯 The APIs You'll Master
 
 We use two fun, free APIs that teach real-world concepts without the complexity:
@@ -250,9 +232,7 @@ curl https://deckofcardsapi.com/api/deck/new/shuffle/
 
 **What you'll learn:** Complex workflows, chaining requests, managing state
 
----
-
-## � Quick Reference - Keep This Handy
+## 🎖 Quick Reference
 
 ### HTTP Status Codes (What the numbers mean)
 
@@ -294,8 +274,6 @@ curl -o response.json https://api.example.com/data
 ... | jq '.[0]'
 ```
 
----
-
 ## 💡 Learning Tips for Success
 
 ### Before You Start
@@ -311,8 +289,6 @@ curl -o response.json https://api.example.com/data
 2. **Re-read the examples** - Make sure you're following them exactly
 3. **Use verbose mode** (`curl -v`) to see what's happening
 4. **Ask for help** - Use the course discussion board
-
----
 
 ## 🎉 Ready to Begin Your API Journey?
 
@@ -342,14 +318,8 @@ You'll be ready to:
 - **Office Hours** - Get one-on-one help from your instructor
 - **Study Groups** - Practice together with fellow students
 
----
-
 ## 📜 License
 
 This educational content is provided under the terms specified in the LICENSE file.
 
----
-
 **🚀 Ready? Let's make your first API call and start this journey!**
-
----
