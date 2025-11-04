@@ -2,7 +2,7 @@
 
 ## Software Defined Networking Course
 
-> **Welcome to Your API Learning Journey!** This is a **companion lab** for your graded assignment. The more you practice here, the easier your graded lab will be! This repository is designed for experimentation - try things, break things, and learn from them.
+> **Welcome to Your API Learning Journey!** This is a **companion** for CNT3105C - Lab 3: Introduction to APIs. The more you practice here, the easier your graded lab will be! This repository is designed for experimentation - try things, break things, and learn from them.
 
 ## 🎯 What You'll Practice
 
@@ -44,9 +44,9 @@ That's it! You just made your first API call. You should see a dad joke appear i
 
 **What just happened?** You asked the Dad Jokes API for a random joke, and it sent one back to you. This is exactly how apps on your phone get weather data, social media posts, or any other information from the internet.
 
-## � Learning Path
+## 🗂 Learning Path
 
-### Phase 1: Understanding the Basics 🌱
+### Phase 1: Understanding the Basics
 
 Start here if you're new to APIs:
 
@@ -54,7 +54,7 @@ Start here if you're new to APIs:
 2. **[🌐 HTTP Protocol Guide](documentation/http-reference.md)** - Learn the language of the web
 3. **[🔧 First API Calls](examples/curl/01-basic-dadjokes.md)** - Make simple requests with cURL
 
-### Phase 2: Hands-On Practice 🎯
+### Phase 2: Hands-On Practice
 
 Get your hands dirty with real APIs:
 
@@ -62,21 +62,21 @@ Get your hands dirty with real APIs:
 2. **[🃏 Stateful APIs](examples/curl/02-deck-of-cards.md)** - Learn about data persistence with card games
 3. **[📝 Intermediate Exercises](exercises/intermediate/README.md)** - Complex scenarios and real-world patterns
 
-### Phase 3: Professional Tools 🛠️
+### Phase 3: Professional Tools
 
 Learn industry-standard tools:
 
 1. **[📮 Postman Basics](examples/postman/README.md)** - GUI tool for API development
 2. **[📝 Advanced Exercises](exercises/advanced/README.md)** - Build complete applications
 
-### Phase 4: Troubleshooting & Mastery 🚨
+### Phase 4: Troubleshooting & Mastery
 
 Become self-sufficient:
 
 1. **[🔍 Troubleshooting Guide](documentation/troubleshooting.md)** - Fix common issues
 2. **Practice Project** - Build your own API automation script
 
-## � Table of Contents
+## 📖 Table of Contents
 
 ### Documentation
 
@@ -232,7 +232,7 @@ curl https://deckofcardsapi.com/api/deck/new/shuffle/
 
 **What you'll learn:** Complex workflows, chaining requests, managing state
 
-## 🎖 Quick Reference
+## 🎖 Module 3 Companion Quick Reference
 
 ### HTTP Status Codes (What the numbers mean)
 
